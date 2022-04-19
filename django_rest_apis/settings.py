@@ -42,7 +42,14 @@ INSTALLED_APPS = [
     'books.apps.BooksConfig',
     'todos.apps.TodosConfig',
     'posts.apps.PostsConfig',
+    'api.apps.ApiConfig',
+
+    #3rd party
+    'rest_framework',
 ]
+
+if DEBUG:
+     INSTALLED_APPS += ["django_extensions"]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
