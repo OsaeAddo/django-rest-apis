@@ -3,10 +3,17 @@ import axios from 'axios';
 
 
 class App extends Component {
+
   state = {
     todos: []
   }
 
+  // Ensure API call is made at correct time during the React lifecycle
+  componentDidMount() {
+    this.getTodos();
+  }
+
+  
   render() {
     return (
       <div>
