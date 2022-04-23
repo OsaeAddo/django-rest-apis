@@ -25,8 +25,8 @@ class App extends Component {
     this.state = { list };
   }
 
-function App() {
-  return (
+  render() {
+    return (
       <div>
         {this.state.list.map(item => (
           <div key={item.id}>
