@@ -13,7 +13,21 @@ class App extends Component {
     this.getTodos();
   }
 
-  
+
+  // Make GET requests to the Todos API with axios
+  getTodos() {
+    axios
+      .get('http://127.0.0.1:8000/api/todos/')
+      
+      .then(res => {
+        this.setState({ todos: res.data }); //put the retrieved API data into the todos list
+      })
+
+      .catch(err => {
+        console.log(err);
+      })
+  }
+
   render() {
     return (
       <div>
