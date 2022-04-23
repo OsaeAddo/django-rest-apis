@@ -1,23 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const list = [
-  {
-    "id": 1,
-    "title": "Study for Physics exam",
-    "body": "prepare for upcoming physics exam"
-  },
-  {
-      "id": 2,
-      "title": "Call prospect",
-      "body": "make a business call"
-  },
-  {
-      "id": 3,
-      "title": "Visit my bby girl",
-      "body": "surprise my girl with a visit"
-  }
-]
 
 class App extends Component {
   constructor(props) {
