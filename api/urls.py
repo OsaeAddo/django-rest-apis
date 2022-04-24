@@ -11,6 +11,6 @@ urlpatterns = [
     path('todo/<int:pk>/', DetailTodoView.as_view()),
 
     #Posts API
-    path('posts/v1/', PostListView.as_view()),
+    path('posts/v1/', PostListView.as_view()), # v1 represents the API version, a good idea
     path('posts/v1/<int:pk>/', PostDetailView.as_view()),
 ]
