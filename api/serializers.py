@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from books.models import Book
 from todos.models import Todo
+from posts.models import Post
 
 
 #Book API 
@@ -18,4 +19,8 @@ class TodoSerializer(serializers.ModelSerializer):
         fields = ('id', 'title', 'body')
 
 
-# 
+# Blog Posts API
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = ('id','author', 'title', 'author', 'created_at')
