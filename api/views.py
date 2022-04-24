@@ -1,10 +1,11 @@
-from yaml import serialize
 from rest_framework import generics
 
 from books.models import Book
 from todos.models import Todo
+from posts.models import Post
 
-from .serializers import BookSerializer, TodoSerializer
+
+from .serializers import BookSerializer, TodoSerializer, PostSerializer
 
 # Book API
 class BookAPIView(generics.ListAPIView):
@@ -22,3 +23,15 @@ class ListTodoView(generics.ListAPIView):
 class DetailTodoView(generics.RetrieveAPIView):
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
+
+
+
+# Blog Post API
+class PostListView(generics.ListCreateAPIView): # to create read-write API endpoint
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+
+class PostDetailView(generics.RetrieveUpdateDestroyAPIView): # to create read-write API endpoint
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
