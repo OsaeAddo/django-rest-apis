@@ -1,4 +1,4 @@
-from rest_framework import generics, permissions
+from rest_framework import generics
 
 from books.models import Book
 from todos.models import Todo
@@ -28,12 +28,10 @@ class DetailTodoView(generics.RetrieveAPIView):
 
 # Blog Post API
 class PostListView(generics.ListCreateAPIView): # to create read-write API endpoint
-    permission_classes = (permissions.IsAuthenticated,)
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
 
-class PostDetailView(generics.RetrieveUpdateDestroyAPIView): # to create read-write API endpoint
-    permission_classes = (permissions.IsAuthenticated,)    
+class PostDetailView(generics.RetrieveUpdateDestroyAPIView): # to create read-write API endpoint    
     queryset = Post.objects.all()
     serializer_class = PostSerializer
