@@ -6,6 +6,8 @@ from posts.models import Post
 
 
 from .serializers import BookSerializer, TodoSerializer, PostSerializer
+from .permissions import IsAuthorOrReadOnly
+
 
 # Book API
 class BookAPIView(generics.ListAPIView):
@@ -33,5 +35,6 @@ class PostListView(generics.ListCreateAPIView): # to create read-write API endpo
 
 
 class PostDetailView(generics.RetrieveUpdateDestroyAPIView): # to create read-write API endpoint    
+    permission_classes = (IsAuthorOrReadOnly,)
     queryset = Post.objects.all()
     serializer_class = PostSerializer
