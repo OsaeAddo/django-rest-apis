@@ -160,3 +160,7 @@ STATIC_URL = 'static/'
 SHELL_PLUS = "bpython"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SITE_ID = 1
