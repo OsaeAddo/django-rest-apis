@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     #3rd party
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_swagger',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
